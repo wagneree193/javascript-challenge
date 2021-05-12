@@ -32,11 +32,11 @@ button.on("click", () =>{
     d3.event.preventDefault();
 
     var inputDate = inputFieldDate.property("value").trim();
-    console.log(inputDate)
+    // console.log(inputDate)
 // use toLowerCase because the city names in the data are lowercase but users might put proper capitalization in their search  
     var inputCity = inputFieldCity.property("value").toLowerCase().trim();
-    console.log(inputCity)
-    var filterCity = tableData.filter(tableData=>tableData.datetime === inputCity);
+    // console.log(inputCity)
+    var filterCity = tableData.filter(tableData=>tableData.city === inputCity);
     // use map to filter the data to where the datetime column matches the input date 
     var filterDate = tableData.filter(tableData => tableData.datetime === inputDate);
 // clear rows in the table
@@ -54,6 +54,10 @@ button.on("click", () =>{
 
     if(response.filterDate.length !== 0) {
         addData(filterDate);
+    }
+
+    else if (response.filterCity.length !==0) {
+        addData(filterCity)
     }
 
     // add a comment to denote no sightings
