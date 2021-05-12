@@ -65,7 +65,3 @@ button.on("click", () =>{
             $tbody.append("tr").append("td").text("No Sightings Here... Yet...");
         }
 })
-
-
-
-// YOUR CODE HERE!
