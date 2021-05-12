@@ -2,7 +2,7 @@
 var tableData = data;
 // console.log the sighting data from the tableData variable
 console.log(tableData);
-//  get a reference to the table and body
+//  get a reference to the table and body- in the HTML it is tbody
 var $tbody = d3.select("tbody");
 // set references for the table columns
 // call the button filter-button bc that is what it is called in the html document
@@ -36,14 +36,20 @@ button.on("click", () =>{
 // use toLowerCase because the city names in the data are lowercase but users might put proper capitalization in their search  
     var inputCity = inputFieldCity.property("value").toLowerCase().trim();
     console.log(inputCity)
+    var filterCity = tableData.filter(tableData=>tableData.datetime === inputCity);
     // use map to filter the data to where the datetime column matches the input date 
     var filterDate = tableData.filter(tableData => tableData.datetime === inputDate);
-
+// clear rows in the table
     $tbody.html("");
 
     let response = {
-        filterDate
+        filterDate,
+        filterCity
     }
+
+    // let response = {
+    //     filterCity
+    // }
 
 
     if(response.filterDate.length !== 0) {
