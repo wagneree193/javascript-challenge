@@ -9,6 +9,9 @@ var $tbody = d3.select("tbody");
 var button = d3.select("#filter-btn");
 var inputFieldDate = d3.select("#datetime");
 var inputFieldCity = d3.select("#city");
+var inputFieldState = d3.select("#state");
+var inputFieldCountry = d3.select("#country");
+var inputFieldShape = d3.select("#shape")
 // set the columns for the table
 var columns = ["datetime", "city", "state", "country","shape", "durationMinutes", "comments"]
 
@@ -36,11 +39,18 @@ button.on("click", () =>{
 // use toLowerCase because the city names in the data are lowercase but users might put proper capitalization in their search  
     var inputCity = inputFieldCity.property("value").toLowerCase().trim();
     // console.log(inputCity)
-    
+    // adding filters for state country and shape
+    var inputState = inputFieldState.property("value").toLowerCase().trim();
+    var inputCountry = inputFieldCountry.property("value").toLowerCase().trim();
+    var inputShape = inputFieldShape.property("value").toLowerCase().trim();
+// use arrow to filter 
     var filterCity = tableData.filter(tableData=>tableData.city === inputCity);
-    // use map to filter the data to where the datetime column matches the input date 
+    
     var filterDate = tableData.filter(tableData => tableData.datetime === inputDate);
-    // use arrow to filter the data to where the datetime column matches the input date 
+    
+    var filterState = tableData.filter(tableData=>tableData.state === inputState);
+    var filterCountry = tableData.filter(tableData=>tableData.country === inputCountry);
+    var filterShape = tableData.filter(tableData=>tableData.shape === inputShape);
     
 // clear rows in the table
     $tbody.html("");
