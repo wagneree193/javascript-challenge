@@ -64,24 +64,39 @@ button.on("click", () =>{
     }
 
 
-    if(response.filterDate.length !== 0) {
+    if(response.filterDate.length !== 0 && response.filterCity.length !==0 && response.filterState.length !==0 && response.filterCountry.length !==0 && response.filterShape.length !==0 )  {
         addData(filterDate);
+       
     }
+    // if (response.filterCity.length !==0) {
+    //     addData(filterCity);
+    // }
 
-    else if (response.filterCity.length !==0) {
-        addData(filterCity);
-    }
+    // if (response.filterState.length !==0) {
+    //     addData(filterState);
+    // }
 
-    else if (response.filterState.length !==0) {
-        addData(filterState);
-    }
+    // if (response.filterCountry.length !==0) {
+    //     addData(filterCountry);
+    // }
+    // if (response.filterShape.length !==0) {
+    //     addData(filterShape);
+    // }
 
-    else if (response.filterCountry.length !==0) {
-        addData(filterCountry);
-    }
-    else if (response.filterShape.length !==0) {
-        addData(filterShape);
-    }
+    // else if (response.filterCity.length !==0) {
+    //     addData(filterCity);
+    // }
+
+    // else if (response.filterState.length !==0) {
+    //     addData(filterState);
+    // }
+
+    // else if (response.filterCountry.length !==0) {
+    //     addData(filterCountry);
+    // }
+    // else if (response.filterShape.length !==0) {
+    //     addData(filterShape);
+    // }
 
     // add a comment to denote no sightings
     
