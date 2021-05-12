@@ -57,7 +57,10 @@ button.on("click", () =>{
 
     let response = {
         filterDate,
-        filterCity
+        filterCity,
+        filterState,
+        filterCountry,
+        filterShape
     }
 
 
@@ -67,6 +70,17 @@ button.on("click", () =>{
 
     else if (response.filterCity.length !==0) {
         addData(filterCity);
+    }
+
+    else if (response.filterState.length !==0) {
+        addData(filterState);
+    }
+
+    else if (response.filterCountry.length !==0) {
+        addData(filterCountry);
+    }
+    else if (response.filterShape.length !==0) {
+        addData(filterShape);
     }
 
     // add a comment to denote no sightings
